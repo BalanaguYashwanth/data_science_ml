@@ -1,0 +1,14 @@
+[
+    {
+        "name": "b_ram",
+        "age": "22",
+        "blood": "b+",
+        "location": "bangalore"
+    },
+    {
+        "name": "raj",
+        "age": "26",
+        "blood": "b+",
+        "location": "bangalore"
+    }
+]
