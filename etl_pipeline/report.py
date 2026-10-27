@@ -67,8 +67,9 @@ def customer_wise_order_count(df):
         .rename(columns={'OrderID': 'OrderCount'})
     )
 
-def monthly_sales_trend(df):
-    pass
+def report_sales_trend_monthly(df):
+    df['OrderDate'] = pd.to_datetime(df['OrderDate'])
+    return df.groupby(df['OrderDate'].dt.to_period('M'))['TotalAmount'].sum()
 
 def run_report(df):
     return {
@@ -84,5 +85,5 @@ def run_report(df):
         "avg_qty_per_order": avg_qty_per_order(df),
         "top_performing_regions": top_performing_regions(df),
         "customer_wise_order_count": customer_wise_order_count(df),
-        "monthly_sales_trend": monthly_sales_trend(df)
+        "monthly_sales_trend": report_sales_trend_monthly(df)
     }
