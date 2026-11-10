@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report, confusion_matrix
+
 df = pd.read_csv("/Users/yashwanth/other-projects/AI_ML/data_science/data/decision_tree.csv")
 X = df.drop('Class', axis=1)
 y = df['Class']
